@@ -13,10 +13,7 @@
         <div class="product-rating">
           <p>{{ product.category }}</p>
           <div class="rating">
-            <p>
-              {{ product.rating.rate }} / 5
-
-            </p>
+            <p>{{ product.rating.rate }}/5</p>
             <span v-for="n in 5" :class="{ 'circle-filled-men': product.category == 'men\'s clothing' && n  <= product.rating.rate, 'circle-filled-women': product.category == 'women\'s clothing' && n  <= product.rating.rate, 'circle-empty-men': product.category == 'men\'s clothing' && n > product.rating.rate, 'circle-empty-women': product.category == 'women\'s clothing' && n > product.rating.rate }"></span>
           </div>
         </div>
@@ -25,7 +22,7 @@
     
         <div>
           <p class="product-price">${{ product.price }}</p>
-          <div>
+          <div class="btn-section">
             <button  type="submit" :class="product.category == 'women\'s clothing' ? 'btn-buy-women' : (product.category == 'men\'s clothing' ? 'btn-buy-men' : 'btn-buy-empty')">Buy now </button>
             <button @click="fetchProduct" type="submit" :class="product.category == 'women\'s clothing' ? 'btn-next-women' : (product.category == 'men\'s clothing' ? 'btn-next-men' : 'btn-next-empty')">Next Product</button>
           </div>
